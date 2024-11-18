@@ -17,9 +17,11 @@ builder.Services.AddHealthChecks()
 builder.Services.AddSingleton<IFileService, FileService>();
 builder.Services.AddSingleton<IVersionService, VersionService>();
 
-    builder.Configuration.AddAzureKeyVault(
-        new Uri($"https://kv-esskegar-{builder.Environment.EnvironmentName}.vault.azure.net/"),
-        new DefaultAzureCredential());
+builder.Configuration.AddAzureKeyVault(
+    new Uri($"https://kv-esskegar-{builder.Environment.EnvironmentName}.vault.azure.net/"),
+    new DefaultAzureCredential());
+
+//Console.WriteLine($"My secret value is: {builder.Configuration.GetValue<string>("SomeSecret")}");
 
 var app = builder.Build();
 
