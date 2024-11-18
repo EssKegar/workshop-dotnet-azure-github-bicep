@@ -62,8 +62,8 @@ jobs:
     with:
       env: prod
       artifact_name: dotnet-artifact
-      resource_group_name: rg-workshop-dnazghbicep-<YOURUSERNAMEHERE>-prod
-      app_service_name: app-workshop-dnazghbicep-<YOURUSERNAMEHERE>-prod
+      resource_group_name: rg-workshop-dnazghbicep-esskegar-prod
+      app_service_name: app-workshop-dnazghbicep-esskegar-prod
       app_service_slot_name: slot
     # Note: use GH Environment Secrets if using a Pro/Enterprise version of GH
     secrets:
