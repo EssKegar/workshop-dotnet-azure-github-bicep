@@ -61,3 +61,8 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2022-09-01' = {
     }
     properties: appServiceProperties
  }
+
+ output appServiceInfo object = {
+  appId: appService.identity.principalId
+  slotId: appServiceSlot.identity.principalId
+}
