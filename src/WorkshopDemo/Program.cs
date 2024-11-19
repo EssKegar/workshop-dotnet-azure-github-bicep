@@ -23,6 +23,11 @@ builder.Configuration.AddAzureKeyVault(
 
 //Console.WriteLine($"My secret value is: {builder.Configuration.GetValue<string>("SomeSecret")}");
 
+builder.Services.AddApplicationInsightsTelemetry(options =>
+{
+    options.ConnectionString = builder.Configuration.GetConnectionString("ApplicationInsights");
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
